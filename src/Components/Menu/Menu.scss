@@ -1,0 +1,58 @@
+// variables
+$primary-color: #0d6efd;
+$secondary-color: #dbe3ea;
+$background-color: #212832;
+$text-color: #d3dce6;
+$hover-color: darken($primary-color, 10%);
+$brand-font: 'Segoe UI', sans-serif;
+
+.navbar {
+  background-color: $background-color !important;
+  padding: 0.75rem 1.0rem;
+
+  .navbar-brand {
+    font-family: $brand-font;
+    font-size: 1.5rem;
+    color: $primary-color;
+    font-weight: bold;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    color: $text-color !important;
+    margin-right: 1rem;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $primary-color !important;
+      text-decoration: none;
+    }
+
+    &.active {
+      color: $primary-color !important;
+      font-weight: 600;
+    }
+  }
+}
+
+.menu-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}

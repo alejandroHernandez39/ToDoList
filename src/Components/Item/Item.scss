@@ -1,0 +1,52 @@
+$card-bg: #ffffff;
+$card-border: #e0e0e0;
+$card-radius: 1rem;
+$card-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+$card-title-color: #343a40;
+$card-text-color: #495057;
+$btn-color: #0d6efd;
+
+.card {
+  width: 100%;
+  background-color: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+  transition: transform 0.2s ease-in-out;
+  padding: auto;
+  margin: 2rem auto;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $card-title-color;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+      color: $card-text-color;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      background-color: $btn-color;
+      border: none;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($btn-color, 10%);
+      }
+    }
+  }
+}
