@@ -6,24 +6,10 @@ import Row from 'react-bootstrap/Row';
 import Menu from './Components/Menu/Menu';
 import Form from './Components/Form/Form';
 import Item from './Components/Item/Item';
+import { useSelector } from 'react-redux';
 
 function App() {
-const tareas = [
-  {
-    name: "Tarea 1",
-    description: "Descripcion de la tarea 1",
-    dueDate: "2023-10-01"
-  },
-  {
-    name: "Tarea 2",
-    description: "Descripcion de la tarea 2",
-    dueDate: "2023-10-02"
-  },
-  {
-    name: "Tarea 3",
-    description: "Descripcion de la tarea 3",
-    dueDate: "2023-10-03"
-  }];
+  const todos = useSelector((state) => state.todos);
   return (
     <div className="App">
       <Menu></Menu>
@@ -31,8 +17,8 @@ const tareas = [
         <Row>
         <Col><Form></Form></Col>
         <Col>
-          {tareas.map((tarea, index) => (
-            <Item key={index} name={tarea.name} description={tarea.description} dueDate={tarea.dueDate}></Item>
+          {todos.map((todo) => (
+            <Item id={todo.id} name={todo.name} description={todo.description} dueDate={todo.dueDate}></Item>
           ))}
         </Col>
         </Row>
