@@ -21,7 +21,7 @@ function BasicExample(props) {
           {props.dueDate}
         </Card.Text>
         <Button variant="primary" onClick={removeItem}>Remover</Button>
-        <Button variant="primary">Editar</Button>
+        <Button variant="primary"></Button>
       </Card.Body>
     </Card>
   );
