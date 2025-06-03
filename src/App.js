@@ -12,8 +12,6 @@ import { useEffect } from 'react';
 
 function App() {
   const todos = useSelector((state) => state.todos);
-  const options = useSelector((state) => state.options);
-  const goals = useSelector((state) => state.goals);
   const dispatch = useDispatch();
   function initFetch() {
     fetch("http://localhost:3001/tasks/getTasks", {
@@ -29,8 +27,8 @@ function App() {
           throw new Error("Network response was not ok");
         }
       }
-    ).then((data) => {
-      data.forEach((todo) => {
+    ).then((response) => {
+      response.forEach((todo) => {
         dispatch(initAddTodo(todo));
       });
     }
@@ -49,8 +47,8 @@ function App() {
         <Row>
         <Col><Form></Form></Col>
         <Col>
-          {todos.map((todo) => (
-            <Item id={todo.id} name={todo.name} description={todo.description} dueDate={todo.dueDate}></Item>
+          {todos.map((todoJson) => (
+            <Item key={todoJson._id} id={todoJson._id} name={todoJson.title} description={todoJson.description} dueDate={todoJson.dueDate}></Item>
           ))}
         </Col>
         </Row>

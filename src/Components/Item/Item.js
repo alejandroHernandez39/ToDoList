@@ -9,6 +9,7 @@ function BasicExample(props) {
   const removeItem = (e) => {
     e.preventDefault();
     dispatch(removeTodo(props.id))
+    alert("Tarea eliminada correctamente");
   }
   return (
     <Card>
@@ -21,7 +22,6 @@ function BasicExample(props) {
           {props.dueDate}
         </Card.Text>
         <Button variant="primary" onClick={removeItem}>Remover</Button>
-        <Button variant="primary"></Button>
       </Card.Body>
     </Card>
   );

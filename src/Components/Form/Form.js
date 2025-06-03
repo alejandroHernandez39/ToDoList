@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Form.scss';
-import { addTodo } from '../../Reducers/todoSlice';
+import { addTodo, addTodoAsync } from '../../Reducers/todoSlice';
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
 
@@ -13,9 +13,14 @@ function BasicExample() {
   const dispatch = useDispatch();
   const addItem = (e) => {
     e.preventDefault();
-    dispatch(addTodo({"id":Date.now(),"name": imputRefName.current.value, "description": imputRefDescription.current.value, "dueDate": imputRefDate.current.value}));
+    const newTodo = {
+      title: imputRefName.current.value,
+      description: imputRefDescription.current.value,
+      dueDate: imputRefDate.current.value
+    };
+
+    dispatch(addTodoAsync(newTodo));
   }
-  
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formNameTask">
